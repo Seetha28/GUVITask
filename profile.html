@@ -8,12 +8,8 @@
   <body>
     <div class="container mt-5">
       <h2>Profile</h2>
-      <?php if (isset($_SESSION['message'])) { ?>
-        <div class="alert alert-info" role="alert">
-          <?php echo $_SESSION['message']; ?>
-        </div>
-      <?php } ?>
-      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+      <div id="alert-message"></div>
+      <form id="update-form">
         <div class="form-group">
           <label for="username">Username:</label>
           <input type="text" class="form-control" id="username" name="username" value="<?php echo $user['username']; ?>" disabled>
@@ -38,10 +34,6 @@
       </form>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
   </body>
 </html>
-
