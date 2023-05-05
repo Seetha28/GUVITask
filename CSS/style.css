@@ -1,0 +1,20 @@
+/* Center the sign up / login forms vertically */
+.row {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Center the sign up / login forms horizontally on small screens */
+@media (max-width: 576px) {
+  .row {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* Add some padding to the sign up / login forms */
+.col-md-6 {
+  padding: 2rem;
+}
+
