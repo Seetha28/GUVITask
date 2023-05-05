@@ -1,14 +1,19 @@
-<!DOCTYPE html>
+
+
+  <!DOCTYPE html>
 <html>
   <head>
     <title>Signup Page</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container mt-5">
       <h2>Signup</h2>
-      <form method="post">
+      <?php if (isset($_SESSION['message'])) { ?>
+        <div class="alert alert-danger" role="alert">
+          <?php echo $_SESSION['message']; ?>
+        </div>
+      <?php } ?>
+      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
         <div class="form-group">
           <label for="username">Username:</label>
           <input type="text" class="form-control" id="username" name="username" required>
@@ -24,9 +29,5 @@
         <button type="submit" class="btn btn-primary">Sign Up</button>
       </form>
     </div>
-    <!-- Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
