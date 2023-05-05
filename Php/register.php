@@ -31,37 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Signup Page</title>
-  </head>
-  <body>
-    <div class="container mt-5">
-      <h2>Signup</h2>
-      <?php if (isset($_SESSION['message'])) { ?>
-        <div class="alert alert-danger" role="alert">
-          <?php echo $_SESSION['message']; ?>
-        </div>
-      <?php } ?>
-      <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" class="form-control" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" class="form-control" id="password" name="password" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Sign Up</button>
-      </form>
-    </div>
-  </body>
-</html>
+
 
 <?php unset($_SESSION['message']); // unset error message after displaying it ?>
 
